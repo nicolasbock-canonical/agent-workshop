@@ -1,0 +1,2 @@
+pushd /root
+wget https://raw.githubusercontent.com/herdrdev/herdr/refs/heads/master/skills/herdr/SKILL.md
