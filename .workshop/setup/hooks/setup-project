@@ -3,6 +3,8 @@ wget --output-document herdr-skill.md \
   https://raw.githubusercontent.com/herdrdev/herdr/refs/heads/master/skills/herdr/SKILL.md
 if ! grep --quiet herdr ~/.bashrc; then
   cat<<"EOF" >> ~/.bashrc
+export PATH="${PATH}:~/.local/bin"
 [[ ${HERDR_ENV:-} != 1 ]] && herdr
 EOF
 fi
+uv tool install mcp-atlassian
