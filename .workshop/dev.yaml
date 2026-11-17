@@ -2,6 +2,6 @@ name: dev
 base: ubuntu@24.04
 sdks:
   - name: herdr
-  - name: project-herdr-skills
+  - name: project-setup
   - name: opencode
     channel: 2

@@ -1,0 +1,3 @@
+pushd /home/workshop
+wget --output-document herdr-skill.md \
+  https://raw.githubusercontent.com/herdrdev/herdr/refs/heads/master/skills/herdr/SKILL.md

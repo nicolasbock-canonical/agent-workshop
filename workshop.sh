@@ -41,3 +41,9 @@ else
     fi
 fi
 workshop refresh ${WORKSHOP_NAME}
+
+workshop stop ${WORKSHOP_NAME}
+workshop connect ${WORKSHOP_NAME}/setup:ssh-agent
+workshop remount ${WORKSHOP_NAME}/opencode:opencode-data ~/.local/share/opencode
+workshop remount ${WORKSHOP_NAME}/opencode:opencode-config ~/.config/opencode
+workshop start ${WORKSHOP_NAME}

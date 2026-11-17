@@ -1,0 +1,4 @@
+name: setup
+plugs:
+  ssh-agent:
+    interface: ssh-agent
