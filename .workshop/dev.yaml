@@ -1,7 +1,9 @@
 name: dev
 base: ubuntu@24.04
 sdks:
+  - name: copilot
+  - name: gh-cli
   - name: herdr
-  - name: project-setup
   - name: opencode
     channel: 2
+  - name: project-setup

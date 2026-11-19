@@ -64,6 +64,9 @@ workshop stop ${WORKSHOP_NAME}
 workshop connect ${WORKSHOP_NAME}/setup:ssh-agent
 workshop remount ${WORKSHOP_NAME}/opencode:opencode-data ~/.local/share/opencode
 workshop remount ${WORKSHOP_NAME}/opencode:opencode-config ~/.config/opencode
+workshop remount ${WORKSHOP_NAME}/copilot:copilot-config ~/.copilot
+workshop remount ${WORKSHOP_NAME}/gh-cli:gh-config ~/.config/gh
+workshop remount ${WORKSHOP_NAME}/gh-cli:gh-data ~/.local/share/gh
 if [[ -n ${work_dir} ]]; then
     workshop remount ${WORKSHOP_NAME}/setup:mount "${work_dir}"
 fi
