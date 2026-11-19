@@ -1,8 +1,1 @@
-pushd /home/workshop
-if ! grep --quiet herdr ~/.bashrc; then
-  cat<<"EOF" >> ~/.bashrc
-export PATH="${PATH}:~/.local/bin"
-[[ ${HERDR_ENV:-} != 1 ]] && herdr
-EOF
-fi
 uv tool install mcp-atlassian

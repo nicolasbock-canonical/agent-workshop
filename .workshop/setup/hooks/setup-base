@@ -1,1 +1,13 @@
 snap install astral-uv --classic
+
+cat <<'EOF' >>/etc/skel/.bashrc
+
+# Workshop setup
+export PATH="${PATH}:~/.local/bin"
+[[ ${HERDR_ENV:-} != 1 ]] && herdr
+EOF
+
+rsync -av /etc/skel/ /home/workshop/
+chown -R workshop:workshop /home/workshop
+
+lxd init --auto
