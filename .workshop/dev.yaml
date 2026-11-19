@@ -4,6 +4,9 @@ sdks:
   - name: copilot
   - name: gh-cli
   - name: herdr
+  - name: neovim
+  - name: omp
   - name: opencode
     channel: 2
   - name: project-setup
+  - name: skills
