@@ -146,3 +146,5 @@ if [[ -f ${HOME}/.vimrc ]]; then
     echo "Copying ~/.vimrc into workshop"
     workshop exec "${WORKSHOP_NAME}" -- bash -c 'cat >~/.vimrc' <"${HOME}/.vimrc"
 fi
+
+workshop shell ${WORKSHOP_NAME}
