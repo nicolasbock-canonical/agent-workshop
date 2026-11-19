@@ -2,3 +2,6 @@ name: setup
 plugs:
   ssh-agent:
     interface: ssh-agent
+  mount:
+    workshop-target: /work
+    read-only: false
