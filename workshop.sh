@@ -5,7 +5,8 @@ set -e -u -o pipefail
 WORKSHOP_NAME=dev
 
 declare -i debug=0
-work_dir=""
+declare WORKSHOP_EXTRA_ARG=""
+declare work_dir=""
 
 # Maps "<sdk>:<mount name>" to the host directory it should be backed by.
 # The tilde is left unexpanded on purpose; expand_home handles it when used.
@@ -87,6 +88,7 @@ if [[ -n ${work_dir} ]]; then
 fi
 
 if (( debug != 0 )); then
+    WORKSHOP_EXTRA_ARG="--verbose"
     set -x
 fi
 
@@ -96,7 +98,7 @@ if ! command -v yq >&/dev/null; then
 fi
 
 if ! workshop info ${WORKSHOP_NAME} >&/dev/null; then
-    workshop launch ${WORKSHOP_NAME}
+    workshop launch ${WORKSHOP_EXTRA_ARG} ${WORKSHOP_NAME}
 else
     status=$(workshop info | yq '.status')
     if [[ ${status} == stopped ]]; then
@@ -104,7 +106,7 @@ else
     fi
 fi
 echo "Refreshing workshop"
-workshop refresh ${WORKSHOP_NAME}
+workshop refresh ${WORKSHOP_EXTRA_ARG} ${WORKSHOP_NAME}
 
 if ! workshop connections ${WORKSHOP_NAME} | grep '^ssh-agent' | grep manual >/dev/null; then
     echo "Connecting ssh-agent"
